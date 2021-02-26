@@ -1,12 +1,14 @@
 package com.example.demo.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import javax.transaction.Transactional;
+
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.demo.model.Veuve;
 
 
 @RepositoryRestResource(collectionResourceRel="veuve",path="veuve")
-public interface VeuveRepositary extends JpaRepository<Integer,Veuve> {
+@Transactional
+public interface VeuveRepositary extends PersonneBaseRepositary<Veuve> { 
 
 }
